@@ -69,7 +69,7 @@ static const struct arg args[] = {
 	{ ram_perc, "RAM: %s%% | ", NULL },
 	{ cpu_perc, "CPU: %s%% | ", NULL },
 	{ wifi_perc, "WIFI: %s%% | ", "wlp59s0" },
-	//{ vol_perc, "VOL: %s%% | ", "/dev/snd/controlC0" },
+	{ run_command, "VOL: %s | ", "amixer get Master | grep % | awk '{print $5}' | sed 's/\\[//' | sed 's/\\]//' | head -n 1" },
 	{ battery_perc, "BAT: %s%% | ", "BAT0" },
 	{ datetime, "%s", "%a, %d %b %l:%M %p" },
 };
