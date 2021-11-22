@@ -67,7 +67,7 @@ static const struct arg args[] = {
 	/* function format          argument */
 	{ num_files, "INBOX: %s | ", "/home/mb/var/mail/datameer.com/inbox/new" },
 	{ ram_perc, "RAM: %s%% | ", NULL },
-	{ load_avg, "CPU: %s | ", NULL },
+	{ cpu_perc, "CPU: %s%% | ", NULL },
 	{ wifi_perc, "WIFI: %s%% | ", "wlp59s0" },
 	{ run_command, "VOL: %s | ", "amixer get Master | grep % | awk '{print $4}' | sed 's/\\[//' | sed 's/\\]//' | head -n 1" },
 	{ battery_perc, "BAT: %s%% | ", "BAT0" },
