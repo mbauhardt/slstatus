@@ -65,11 +65,11 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ num_files, "INBOX: %s | ", "/home/mb/var/mail/datameer.com/inbox/new" },
-	{ ram_perc, "RAM: %s%% | ", NULL },
-	{ cpu_perc, "CPU: %s%% | ", NULL },
-	{ wifi_perc, "WIFI: %s%% | ", "wlp59s0" },
-	{ run_command, "VOL: %s | ", "amixer get Master | grep % | awk '{print $4}' | sed 's/\\[//' | sed 's/\\]//' | head -n 1" },
-	{ battery_perc, "BAT: %s%% | ", "BAT0" },
-	{ datetime, "%s", "%a %d %b, %H:%M %p" },
+	{ num_files, "📨 %s  ", "/home/mb/var/mail/datameer.com/inbox/new" },
+	{ ram_perc, "🐘 %s%%  ", NULL },
+	{ cpu_perc, "🔥 %s%%  ", NULL },
+	{ wifi_perc, "📶 %s%%  ", "wlp59s0" },
+	{ run_command, "🔊 %s  ", "amixer get Master | grep % | awk '{print $4}' | sed 's/\\[//' | sed 's/\\]//' | head -n 1" },
+	{ battery_perc, "🔌 %s%%  ", "BAT0" },
+	{ datetime, "⏰ %s", "%a %d %b, %H:%M %p" },
 };
