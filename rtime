@@ -1,0 +1,33 @@
+#!/bin/lua
+
+local f = io.open(arg[1], "r")
+if f ~= nil then
+    io.close(f)
+else
+    io.write("-")
+    return true
+end
+
+os.setlocale("de_DE")
+local cmd = "stat -c %Y " .. arg[1]
+local cmd_out = io.popen(cmd)
+local last_modified = cmd_out:read()
+cmd_out:close()
+local now = os.time()
+
+local diff = os.difftime(now, tonumber(last_modified))
+local tmp = os.date("*t", diff)
+
+if tmp.year > 1970 then
+    io.write(">", tmp.year - 1970, "year")
+elseif tmp.month > 1 then
+    io.write(">", tmp.month - 1, "month")
+elseif tmp.day > 1 then
+    io.write(">", tmp.day - 1, "day")
+elseif tmp.hour > 1 then
+    io.write(">", tmp.hour - 1, "hour")
+elseif tmp.min > 0 then
+    io.write(">", tmp.min, "min")
+elseif tmp.sec > 0 then
+    io.write(">", tmp.sec, "sec")
+end

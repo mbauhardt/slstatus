@@ -65,5 +65,22 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ datetime, "%s",           "%F %T" },
+	{ run_command, "       %s     ", "xbps-query -m | wc -l" },
+	{ num_files, " %s     ", "/home/mb/var/mail/datameer.com/inbox/new" },
+	{ ram_perc, " %s     ", NULL },
+	{ cpu_perc, " %s     ", NULL },
+	{ wifi_perc, " %s     ", "wlp59s0" },
+	{ run_command, " %s     ", "pamixer --get-volume" },
+	{ battery_perc, "  %s     ", "BAT0" },
+	{ datetime, " %s", "%a %d %b, %H:%M" },
+	{ run_command, "; %s     ", "bash -c '$HOME/etc/sv/vpn/check &> /dev/null && echo  || echo '" },
+	{ run_command, "%s/", "host -v void | head -n1 | awk -F'\"' '{print $2}'" },
+	{ ipv4, "%s     ", "wlp59s0" },
+	{ run_command, "󰁯  ", "" },
+	{ run_command, "󰀫 %s  ", "rtime /.snapshots/alpha.0" },
+	{ run_command, "󰂡 %s  ", "rtime /.snapshots/beta.0" },
+	{ run_command, "󱃮 %s  ", "rtime /.snapshots/gamma.0" },
+	{ run_command, "󰇂 %s  ", "rtime /.snapshots/delta.0" },
+	{ run_command, ";%s/", "bash -c 'dwm -v 2>&1'" },
+	{ kernel_release, "%s ", NULL },
 };
